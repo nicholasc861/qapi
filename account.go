@@ -169,6 +169,10 @@ type Execution struct {
 	ParentID int `json:"parentId"`
 }
 
+// Positions represents all open and closed positions of a given account
+//
+// Ref: https://www.questrade.com/api/documentation/rest-operations/account-calls/accounts-id-positions
 type Positions struct {
-	Positions []Position `json:"postions"`
+	// Positions Array
+	Positions []Position `json:"positions"`
 }

@@ -483,6 +483,8 @@ func (c *Client) GetCandles(id int, start time.Time, end time.Time, interval str
 	return r.Candles, nil
 }
 
+// GetPositions retrieves all open and closed positions for the specified account
+// See: https://www.questrade.com/api/documentation/rest-operations/account-calls/accounts-id-positions
 func (c *Client) GetPositions(acctNum string) (Positions, error) {
 	positions := Positions{}
 
