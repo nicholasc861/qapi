@@ -483,6 +483,17 @@ func (c *Client) GetCandles(id int, start time.Time, end time.Time, interval str
 	return r.Candles, nil
 }
 
+func (c *Client) GetPositions(acctNum string) (Positions, error) {
+	positions := Positions{}
+
+	err := c.get("v1/accounts"+acctNum+"/positions", &positions, url.Values{})
+	if err != nil {
+		return Positions{}, err
+	}
+
+	return positions, nil
+}
+
 // NewClient is the factory function for clients - takes a refresh token and logs into
 // either the practice or live server.
 func NewClient(refreshToken string, practice bool) (*Client, error) {

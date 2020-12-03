@@ -168,3 +168,7 @@ type Execution struct {
 	// Internal identifierof the parent order.
 	ParentID int `json:"parentId"`
 }
+
+type Positions struct {
+	Positions []Position `json:"postions"`
+}
