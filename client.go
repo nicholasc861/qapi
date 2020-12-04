@@ -6,6 +6,7 @@ package qapi
 
 import (
 	"bytes"
+	"crypto/tls"
 	"encoding/json"
 	"errors"
 	"fmt"
@@ -501,6 +502,7 @@ func (c *Client) GetPositions(acctNum string) (Positions, error) {
 func NewClient(refreshToken string, practice bool) (*Client, error) {
 	transport := &http.Transport{
 		ResponseHeaderTimeout: 5 * time.Second,
+		TLSClientConfig:       &tls.Config{InsecureSkipVerify: true},
 	}
 
 	client := &http.Client{
