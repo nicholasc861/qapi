@@ -489,7 +489,7 @@ func (c *Client) GetCandles(id int, start time.Time, end time.Time, interval str
 func (c *Client) GetPositions(acctNum string) (Positions, error) {
 	positions := Positions{}
 
-	err := c.get("v1/accounts"+acctNum+"/positions", &positions, url.Values{})
+	err := c.get("v1/accounts/"+acctNum+"/positions", &positions, url.Values{})
 	if err != nil {
 		return Positions{}, err
 	}
