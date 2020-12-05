@@ -499,10 +499,10 @@ func (c *Client) GetPositions(acctNum string) (Positions, error) {
 
 // NewClient is the factory function for clients - takes a refresh token and logs into
 // either the practice or live server.
-func NewClient(refreshToken string, practice bool) (*Client, error) {
+func NewClient(refreshToken string, enableTLS bool, practice bool) (*Client, error) {
 	transport := &http.Transport{
 		ResponseHeaderTimeout: 5 * time.Second,
-		TLSClientConfig:       &tls.Config{InsecureSkipVerify: true},
+		TLSClientConfig:       &tls.Config{InsecureSkipVerify: enableTLS},
 	}
 
 	client := &http.Client{
