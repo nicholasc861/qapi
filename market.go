@@ -138,7 +138,7 @@ type ChainPerStrikePrice struct {
 
 type ChainPerRoot struct {
 	// Option root symbol.
-	Root string `json:"root"`
+	Root string `json:"optionRoot"`
 
 	// Slice of ChainPerStrikePrice elements.
 	ChainPerStrikePrice []ChainPerStrikePrice `json:"chainPerStrikePrice"`
