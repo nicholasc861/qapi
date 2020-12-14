@@ -327,7 +327,7 @@ func (c *Client) SearchSymbols(prefix string, offset int) ([]SymbolSearchResult,
 // TODO - More comprehensive tests - perhaps I should learn what an option chain is?
 func (c *Client) GetOptionChain(id int) ([]OptionChain, error) {
 	o := struct {
-		Options []OptionChain `json:"options"`
+		Options []OptionChain `json:"optionChain"`
 	}{}
 
 	err := c.get("v1/symbols/"+strconv.Itoa(id)+"/options", &o, url.Values{})
