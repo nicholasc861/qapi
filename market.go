@@ -99,7 +99,7 @@ type Symbol struct {
 type UnderlyingMultiplierPair struct {
 	Multiplier         int    `json:"multiplier"`
 	UnderlyingSymbol   string `json:"underlyingSymbol"`
-	UnderlyingSymbolID string `json:"underlyingSymbolId"`
+	UnderlyingSymbolID int    `json:"underlyingSymbolId"`
 }
 
 type OptionContractDeliverables struct {
